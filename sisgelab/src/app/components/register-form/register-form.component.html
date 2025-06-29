@@ -1,0 +1,23 @@
+<div  class="register-form-container">
+    <form action="" class="register-form" (ngSubmit)="registerUser()"  #formulario="ngForm">
+        <h1>SisGeLab</h1>
+        <h2>Sistema de Gestion de Laboratorios</h2>
+        <h3>Registro de Usuarios</h3>
+
+        <label for="name">Nombre:</label>
+        <input type="text" [(ngModel)]="name" name="name">
+
+        <label for="code">Codigo Estudiantil:</label>
+        <input type="text" [(ngModel)]="code" name="code">
+
+        <label for="password">Contraseña:</label>
+        <input type="password" [(ngModel)]="password" name="password">
+
+        <button type="submit">Registrar</button>
+
+        <label for="password">¿Ya tienes una cuenta?</label>
+        <a href="/login">Ingresa aqui</a>
+    </form>
+
+</div>
+
