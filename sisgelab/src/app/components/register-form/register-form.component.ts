@@ -1,29 +1,44 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2'; 
 
 @Component({
   selector: 'app-register-form',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,ReactiveFormsModule,RouterModule],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
-  
-  constructor(private router: Router) {}
 
-  name: string = '';
-  code: string = '';
-  password: string = '';
+  registerForm: FormGroup;
+  
+  constructor(private router: Router , private fb: FormBuilder){
+    
+    this.registerForm = this.fb.group({
+      name: ['', Validators.required],
+      code: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
   
 
   registerUser() {
-    console.log('Name:', this.name);
-    console.log('Code:', this.code);
-    console.log('Password:', this.password);
 
+    if (this.registerForm.valid) {
+    const name = this.registerForm.get('name')?.value;  
+    const code = this.registerForm.get('code')?.value;
+    const password = this.registerForm.get('password')?.value;
+
+    console.log('Code:', name);
+    console.log('Code:', code);
+    console.log('Password:', password);
+
+    this.router.navigate(['/login']);
+    this.registerForm.reset(); // Limpia el formulario
+    }
+   
     Swal.fire({
       icon: 'success',
       title: '¡Registro exitoso!',
@@ -32,16 +47,9 @@ export class RegisterFormComponent {
       timer: 2500,
       showConfirmButton: false
     });
-    
-
-
-    this.name = '',
-    this.code = '',
-    this.password = ''
-
     // Logica para el Back
     setTimeout(() => {
-      this.router.navigate(['/login']);  // ⬅️ Ajusta esta ruta según tu app
+      this.router.navigate(['/login']); 
     }, 1500);
     
   }

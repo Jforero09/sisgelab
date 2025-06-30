@@ -1,0 +1,23 @@
+.header-container{
+    display: flex;
+    height: 8vh;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3498db;
+    width: 100%;
+}
+header a{
+    padding: 1vh;
+    text-decoration: none;
+    color: white;
+}
+
+header h1{
+    color: white;
+    padding: 1vh;
+}
+ 
