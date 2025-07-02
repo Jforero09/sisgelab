@@ -1,0 +1,115 @@
+<app-header></app-header>
+<div class="booked-table-container">
+    <mat-tab-group>
+        <mat-tab label="Mis reservas ">
+            <table  class="bookings-table"   cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                    <th>ID Reserva</th>
+                    <th>Hora de Inicio</th>
+                    <th>Hora Final</th>
+                    <th>ID del Recurso</th>
+                    <th>Nombre del Recurso</th>
+                    <th>Estado Reserva</th>
+                    <th>Valorar Reserva</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí van los datos -->
+                    <tr>
+                    <td>001</td>
+                    <td>08:00</td>
+                    <td>10:00</td>
+                    <td>R-123</td>
+                    <td>Laboratorio Optica</td>
+                    <td>Confirmada</td>
+                    <td>No disponible</td>
+                    </tr>
+                    <tr>
+                    <td>002</td>
+                    <td>10:00</td>
+                    <td>12:00</td>
+                    <td>R-124</td>
+                    <td>Laboratorio Electro estatica</td>
+                    <td>Terminada</td>
+                    <td><a href="/valorations">Valorar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-tab>
+        <mat-tab label="Mis Prestamos">
+            <table  class="bookings-table"   cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                    <th>ID Reserva</th>
+                    <th>ID Prestamo</th>
+                    <th>Hora de Devolucion</th>
+                    <th>ID del Implemento prestado</th>
+                    <th>Nombre del Implemento </th>
+                    <th>Estado Prestamo</th>
+                    <th>Valorar Prestamo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí van los datos -->
+                    <tr>
+                    <td>001</td>
+                    <td>08:00</td>
+                    <td>10:00</td>
+                    <td>I-112</td>
+                    <td>Multimetro</td>
+                    <td>Confirmada</td>
+                    <td>No disponible</td>
+                    </tr>
+                    <tr>
+                    <td>002</td>
+                    <td>10:00</td>
+                    <td>12:00</td>
+                    <td>I-054</td>
+                    <td>Microscopio</td>
+                    <td>Terminada</td>
+                    <td><a href="/valorations">Valorar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </mat-tab>
+        <mat-tab label="Mis Solicitudes"> 
+            <table  class="bookings-table"   cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                    <th>ID Solicitud</th>
+                    <th>ID Recurso</th>
+                    <th>ID Usuario</th>
+                    <th>Nombre Recurso</th>
+                    <th>Tipo de recurso</th>
+                    <th>Fecha Solicitud</th>
+                    <th>Estado Solicitud</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí van los datos -->
+                    <tr>
+                    <td>021</td>
+                    <td>I-256</td>
+                    <td>20192020125</td>
+                    <td>Termometro</td>
+                    <td>Implemento</td>
+                    <td>08/06/2025</td>
+                    <td>Denegada</td>
+                    </tr>
+                    <tr>
+                    <td>002</td>
+                    <td>R-124</td>
+                    <td>20192020125</td>
+                    <td>Laboratorio Electro estatica</td>
+                    <td>Laboratorio</td>
+                    <td>05/05/2025</td>
+                    <td>Aceptada</td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
