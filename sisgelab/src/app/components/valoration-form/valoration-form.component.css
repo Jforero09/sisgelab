@@ -1,14 +1,12 @@
 .main-container{
   width: 100%;
   height: 100%;
-  border: solid green;
   display: flex;
   flex-direction: column;
 }
 .valorarion-container{
     width: 100%;
     height: 100%;
-    border: solid purple;
     justify-content: center;
     align-items: center;
     text-align: center;

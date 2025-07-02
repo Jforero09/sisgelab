@@ -10,8 +10,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-valoration-form',
-  imports: [HeaderComponent,MatInputModule,MatSelectModule,MatFormFieldModule,FormsModule,CommonModule,
-    RouterModule,ReactiveFormsModule],
+  imports: [HeaderComponent,MatInputModule,MatSelectModule,MatFormFieldModule,FormsModule,CommonModule,ReactiveFormsModule],
   templateUrl: './valoration-form.component.html',
   styleUrl: './valoration-form.component.css'
 })
