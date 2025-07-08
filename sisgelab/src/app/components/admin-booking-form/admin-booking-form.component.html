@@ -1,0 +1,42 @@
+<div class="container-form-recursos" >
+    <form action="" class="form-recursos" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>Registrar Reserva</h1>
+
+        <div class="form-selector">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Numero de documento de quien reserva</mat-label>
+                <input matInput placeholder="" value="">
+            </mat-form-field>
+
+            
+
+            <mat-form-field>
+            <mat-label>Recurso</mat-label>
+            <mat-select>
+                <mat-option value="option1">Laboratorio optica</mat-option>
+                <mat-option value="option2">Implemento 1</mat-option>
+            </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Hora de inicio</mat-label>
+                <input matInput [ngxMatTimepicker]="pickerInicio" formControlName="horaInicio" />
+                <ngx-mat-timepicker #pickerInicio></ngx-mat-timepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Hora de fin</mat-label>
+                <input matInput [ngxMatTimepicker]="pickerFin" formControlName="horaFin" />
+                <ngx-mat-timepicker #pickerFin></ngx-mat-timepicker>
+            </mat-form-field>
+
+        </div>
+       
+        <button type="submit">Registrar recurso</button>
+
+    </form>
+</div>
+
+
+

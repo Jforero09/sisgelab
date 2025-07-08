@@ -1,0 +1,44 @@
+<app-admin-header></app-admin-header>
+<div class="booked-table-container">
+    
+    <h1>Gestion de solicitudes</h1>
+        
+            <table  class="bookings-table"   cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID Solicitud</th>
+                        <th>ID Usuario</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora Final</th>
+                        <th>ID del Recurso</th>
+                        <th>Nombre del Recurso</th>
+                        <th>Estado de Solicitud</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí van los datos -->
+                   <tr *ngFor="let booking of bookings; let i = index">
+                        <td>{{ booking.id }}</td>
+                        <td>{{ booking.usuarioId }}</td>
+                        <td>{{ booking.horaInicio }}</td>
+                        <td>{{ booking.horaFinal }}</td>
+                        <td>{{ booking.recursoId }}</td>
+                        <td>{{ booking.nombreRecurso }}</td>
+                        <td>
+                        <ng-container [ngSwitch]="booking.estado">
+                            <div *ngSwitchCase="'pendiente'">
+                            <button class="button1" (click)="acceptBooking(booking)">Aceptar</button>
+                            <button class="button2" (click)="deleteBooking(booking)">Rechazar</button>
+                            </div>
+                            <span *ngSwitchCase="'rechazada'" style="color: red; font-weight: bold;">Rechazada</span>
+                            <span *ngSwitchCase="'confirmada'" style="color: green; font-weight: bold;">Confirmada</span>
+                        </ng-container>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+        
+    
+</div>
+
