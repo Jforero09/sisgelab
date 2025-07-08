@@ -15,13 +15,15 @@ export class LoginFormComponent {
 
   constructor(private router: Router , private fb: FormBuilder){
     this.loginForm = this.fb.group({
-      code: ['', Validators.required],
+      code: ['', [Validators.required , Validators.pattern(/^\d{11}$/)]],
       password: ['', Validators.required]
     });
   }
 
-  code: string = '';
-  password: string = '';
+  
+  get code() {
+    return this.loginForm.get('code');
+  }
 
   loginUser() {
     if (this.loginForm.valid) {
@@ -35,5 +37,36 @@ export class LoginFormComponent {
       this.loginForm.reset(); // Limpia el formulario
       }
   }
+
+
+  codeValidator(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+
+
+    
+    const allowedKeys = [
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'Delete'
+    ];
+
+    // Permitir teclas especiales
+    if (allowedKeys.includes(event.key)) {
+      return;
+    }
+
+    // Bloquear si no es número
+    if (!/^[0-9]$/.test(event.key)) {
+      event.preventDefault();
+      return;
+    }
+
+    // Bloquear si ya hay 10 caracteres
+    if (input.value.length >= 11) {
+      event.preventDefault();
+    }
+    }
 
 }
