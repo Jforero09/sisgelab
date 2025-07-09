@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BookedResourcesTableComponent } from './components/booked-resources-table/booked-resources-table.component';
 import { ValorationFormComponent } from './components/valoration-form/valoration-form.component';
 import { ResourceRegisterFormComponent } from './components/resource-register-form/resource-register-form.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminManagerComponent } from './components/admin-manager/admin-manager.component';
 
 export const routes: Routes = [
 
@@ -29,6 +31,12 @@ export const routes: Routes = [
     },{
         path:'admin/resource_register',
         component:ResourceRegisterFormComponent
+    },{
+       path:'admin/home',
+       component:AdminHomeComponent
+    },{
+        path:'admin/manager',
+       component:AdminManagerComponent
     }
 
 
