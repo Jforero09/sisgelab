@@ -76,7 +76,7 @@ export class HomeComponent {
       fechaSolicitud: fechaReserva.toISOString().split('T')[0],
       usuario: this.reservaForm.value.idUsuario,
     }
-    console.log(reservaData)
+    console.log(reservaData);
     this.generarSolicitud(reservaData);
   }
 

@@ -33,7 +33,14 @@ export class LoginFormComponent {
       console.log('Code:', code);
       console.log('Password:', password);
 
-      this.router.navigate(['/home']);
+      if(password === 'admin')
+      {
+        this.router.navigate(['/admin/home']);
+      }
+      else
+      {
+        this.router.navigate(['/home']);
+      }
       this.loginForm.reset(); // Limpia el formulario
       }
   }

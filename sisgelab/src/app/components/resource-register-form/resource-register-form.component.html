@@ -7,31 +7,31 @@
 
             <mat-form-field>
             <mat-label>Tipo de recurso</mat-label>
-            <mat-select>
-                <mat-option value="option1">Laboratorios</mat-option>
-                <mat-option value="option2">Implementos</mat-option>
+            <mat-select formControlName="tipoRecurso">
+                <mat-option value="espacio">Laboratorios</mat-option>
+                <mat-option value="implemento">Implementos</mat-option>
             </mat-select>
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
                 <mat-label>Nombre del recurso</mat-label>
-                <input matInput placeholder="" value="">
+                <input matInput placeholder="" value="" formControlName="nombreRecurso">
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
                 <mat-label>Ubicacion del recurso</mat-label>
-                <input matInput placeholder="" value="">
+                <input matInput placeholder="" value="" formControlName="ubicacionRecurso">
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Hora de inicio</mat-label>
-                <input matInput [ngxMatTimepicker]="pickerInicio" formControlName="horaInicio" />
+                <input matInput [ngxMatTimepicker]="pickerInicio" formControlName="horaInicioDisponibilidad" />
                 <ngx-mat-timepicker #pickerInicio></ngx-mat-timepicker>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Hora de fin</mat-label>
-                <input matInput [ngxMatTimepicker]="pickerFin" formControlName="horaFin" />
+                <input matInput [ngxMatTimepicker]="pickerFin" formControlName="horaFinDisponibilidad" />
                 <ngx-mat-timepicker #pickerFin></ngx-mat-timepicker>
             </mat-form-field>
 
