@@ -1,4 +1,4 @@
-describe('Valoration form test', () => {
+describe('Valoration form reservas test', () => {
   it('Goes to valoration form', () => {
     cy.visit('/home')
     cy.visit('/booked_resoruces')
