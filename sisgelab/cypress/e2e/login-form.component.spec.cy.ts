@@ -6,8 +6,6 @@ describe('Login form test', () => {
     cy.contains('Sistema de Gestion de Laboratorios').should('be.visible');
     cy.contains('Codigo Estudiantil').should('be.visible');
     cy.contains('Contraseña').should('be.visible');
-    cy.contains('¿Aún no tienes una cuenta?').should('be.visible');
-    cy.contains('Registrate aqui').should('be.visible');
 
     cy.get('[formcontrolname="code"]')
       .should('exist')

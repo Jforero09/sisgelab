@@ -2,34 +2,19 @@ describe('Home test', () => {
   it('Goes to the home page', () => {
     cy.visit('/home')
 
-    const matSelectPrefix = '#mat-select-';
+    cy.get('#mat-select-0').click();
 
-    const selectIds = [0, 1, 2, 3];
+    // 2. Selecciona la primera opción del dropdown
+    cy.get('mat-option').first().click();
 
-    selectIds.forEach(id => {
-      const selector = `${matSelectPrefix}${id}`;
-      
-      cy.get(selector)
-        .should('exist')     
-        .and('be.visible')
-        .and('not.be.empty'); 
+    // 3. Opcional: Verifica que el valor seleccionado se muestre en el mat-select
+    cy.get('#mat-select-0').should('contain.text', 'Laboratorios');
 
-      cy.get(selector).click();
-
-      cy.get('mat-option[role="option"]')
-        .should('have.length.gt', 0)
-        .its('length')
-        .then((optionCount) => {
-          const randomIndex = Cypress._.random(0, optionCount - 1); 
-          cy.get('mat-option[role="option"]')
-            .eq(randomIndex) 
-            .click(); 
-        });
-    });
-
-    cy.get('[type="submit"]')
-      .should('exist')
-      .and('be.visible')
-      .click();
+    cy.get('#mat-input-0')
+    .click()
+    .clear()    
+    .type('10'); 
+    
+    cy.contains('button', 'Reservar').click();
   })
 })
